@@ -238,7 +238,7 @@ def make_tag(
     input(f">>> Ready to push to remote {remote_name}? Ctrl-c to cancel")
     print("")
     print(">>> Pushing...")
-    subprocess.check_call(["git", "push", "--tags", remote_name, tag_name])
+    subprocess.check_call(["git", "push", remote_name, f"refs/tags/{tag_name}"])
 
     if bug_number:
         # Show url to tag information on GitHub for bug comment
